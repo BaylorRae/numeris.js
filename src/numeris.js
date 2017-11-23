@@ -1,10 +1,25 @@
+const MAP = {
+  1: 'I',
+  5: 'V',
+  10: 'X'
+};
+
+const SORTED_KEYS = Object.keys(MAP).map(i => parseInt(i)).sort((x, y) => x < y);
+
 export default class Numeris {
 
   toNumeral(number) {
-    if (number === 5)
-      return 'V';
+    let result = '';
 
-    return 'I'.repeat(number)
+    while (number > 0) {
+      const key = SORTED_KEYS.find(x => x <= number),
+            letter = MAP[key];
+
+      result += letter;
+      number -= key;
+    }
+
+    return result;
   }
 
 }

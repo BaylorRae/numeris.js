@@ -17,3 +17,8 @@ testNumber(2, 'II');
 testNumber(3, 'III');
 
 testNumber(5, 'V');
+testNumber(6, 'VI');
+
+testNumber(10, 'X');
+testNumber(15, 'XV');
+testNumber(17, 'XVII');
