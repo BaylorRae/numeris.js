@@ -2,12 +2,18 @@ import test from 'ava';
 
 import Numeris from '../src/numeris';
 
-test('1 should be I', t => {
-  const numeris = new Numeris();
-  t.is(numeris.toNumeral(1), 'I');
+test.beforeEach(t => {
+  t.context = new Numeris().toNumeral;
 });
 
-test('2 should be II', t => {
-  const numeris = new Numeris();
-  t.is(numeris.toNumeral(2), 'II');
-});
+const testNumber = (actual, expected) => {
+  test(`${actual} should be ${expected}`, t => {
+    t.is(t.context(actual), expected);
+  });
+}
+
+testNumber(1, 'I');
+testNumber(2, 'II');
+testNumber(3, 'III');
+
+testNumber(5, 'V');
