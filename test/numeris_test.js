@@ -24,3 +24,9 @@ testNumber(9, 'IX');
 testNumber(10, 'X');
 testNumber(15, 'XV');
 testNumber(17, 'XVII');
+testNumber(19, 'XIX');
+
+testNumber(27, 'XXVII');
+testNumber(29, 'XXIX');
+
+testNumber(34, 'XXXIV');
